@@ -1,0 +1,55 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="default" extends="struts-default,json-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+            <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+        </result-types>
+        
+        <action name="login" class="com.keerthi.chatapp.LoginAction">
+            <result name="success" >chatview/header.jsp</result>
+            <result name="error" >index.jsp</result>
+        </action>
+        
+        <action name="signup" class="com.keerthi.chatapp.SignUpAction">
+            <result name="success" type="redirect">index.jsp</result>
+            <result name="error">signup.jsp</result>
+        </action>
+
+        <action name="search" class="com.keerthi.chatapp.headerAction">
+            <result name="success">chatview/header.jsp</result>
+            <result name="error">chatview/header.jsp</result>
+        </action>
+        
+        <action name="sendChat" class="com.keerthi.chatapp.ChatAction">
+            <result name="success">chatview/chatpage.jsp</result>
+            <result name="error">chatview/chatpage.jsp</result>
+        </action>
+        
+        <action name="fetchChatHistory" class="com.keerthi.chatapp.ChatAction" method="fetchChatHistory">
+            <result name="success" type="json"/>
+            <result name="error" type="json"/>
+        </action>
+        
+        <action name="sendRequest" class="com.keerthi.chatapp.RequestAction">
+            <result name="success">chatview/header.jsp</result>
+            <result name="error">chatview/header.jsp</result>
+        </action>
+        
+        <action name="sendResponse" class="com.keerthi.chatapp.RequestAction" method="updateRequest">
+            <result name="success">chatview/header.jsp</result>
+            <result name="error">chatview/header.jsp</result>
+        </action>
+        
+         <action name="chat" >
+            <result name="success">chatview/chatpage.jsp</result>
+        </action>
+        
+        <action name="sendImage" class="com.keerthi.chatapp.SignUpAction" method="updateImage">
+			<result name="success">chatview/header.jsp</result>
+			<result name="error">chatview/header.jsp</result>
+		</action>
+        
+    </package>
+</struts>

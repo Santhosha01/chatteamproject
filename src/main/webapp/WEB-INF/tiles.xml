@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+   <definition name="chatview/header" template="/WEB-INF/layoutmanager/layoutManager.jsp">
+    <put-attribute name="title" value="Chat Application" />
+    <put-attribute name="header" value="/webapp/chatview/header.jsp" />
+    <put-attribute name="body" value="/webapp/chatview/chatpage.jsp" />
+</definition>
+   
+</tiles-definitions>
