@@ -16,7 +16,7 @@ public class LoginAction extends ActionSupport {
 	private static String filePath;
 
 	public String execute() {
-		System.out.println("Hello12345");
+		System.out.println("santhosh");
 		boolean isValid = DatabaseManager.getInstance().validateUser(userName, password);
 		System.out.println("Hello");
 		setFilePath(DatabaseManager.getInstance().getImagePath(userName, password));
